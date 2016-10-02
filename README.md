@@ -1,6 +1,6 @@
 # recursiveReaddir
 
-A recursive implementation of fs.readdir
+A parallelized recursive implementation of fs.readdir
 
 ## How To Use:
 
@@ -15,24 +15,22 @@ A recursive implementation of fs.readdir
 
 ### Development
 
-1. Place all your code in `index.js`'s `function* ls()`:
+1. Place all your code in `ls.js`'s `async function ls()`:
 
     ```node
-    #!/usr/bin/env node
-    
     require('./helper')
-    
-    function* ls() {
-        // Use 'yield' in here
-        console.log('Executing ls function...')
-        
-        // Your implementation here
+
+    async function ls() {
+      // Use 'await' inside 'async function's
+      console.log('Executing ls function...')
+      
+      // Your implementation here
     }
-    
-    module.exports = ls
+
+    ls()
     ```
 1. Run:
 
     ```bash
-    ./index.js
+    ./ls.js
     ```

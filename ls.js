@@ -1,10 +1,10 @@
 require('./helper')
 
-function* ls() {
-  // Use 'yield' in here
+async function ls() {
+  // Use 'await' inside 'async function's
   console.log('Executing ls function...')
   
   // Your implementation here
 }
 
-module.exports = ls
+ls()

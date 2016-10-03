@@ -2,17 +2,17 @@
   "name": "nodejs-ls",
   "version": "1.0.1",
   "description": "A recursive implementation of ls",
-  "main": "index.js",
+  "main": "ls.js",
   "scripts": {
-    "start": "nodemon  --exec npm start -- -- ",
-    "once": "babel-node -- index.js",
+    "start": "nodemon  --exec 'babel-node -- ./' -- ",
+    "once": "babel-node -- ./",
     "test": "mocha --compilers js:babel-register test/spec",
-    "test-watch": "nodemon --exec \"npm test || true\"",
-    "dev": "run-p start test-watch lint-watch",
+    "dev": "run-p start watch:test watch:lint",
     "clean": "rimraf dist",
-    "lint":  "eslint src",
-    "lint-watch":  "nodemon --exec \"npm run lint || true\"",
-    "build": "babel src -o dist"
+    "lint": "eslint src",
+    "build": "babel src -o dist",
+    "watch:test": "nodemon --exec \"npm test || true\"",
+    "watch:lint": "nodemon --exec \"npm run lint || true\""
   },
   "repository": {
     "type": "git",
@@ -25,12 +25,11 @@
   },
   "homepage": "https://github.com/CrabDude/nodejs-ls#readme",
   "dependencies": {
-    "npm-run-all": "^3.1.0",
-    "nodemon": "^1.10.2",
     "babel-cli": "^6.16.0",
-    "babel-register": "^6.14.0",
     "babel-preset-nodev6": "^1.0.0",
-    "safeguards": "0.0.3",
+    "babel-register": "^6.14.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.1.0",
     "songbird": "^1.0.4",
     "trycatch": "^1.5.21"
   },
@@ -39,7 +38,7 @@
     "babel-eslint": "^7.0.0",
     "chai": "^3.5.0",
     "eslint": "^3.7.0",
-    "eslint-config-noderiety": "^1.1.1",
+    "eslint-config-noderiety": "^1.3.0",
     "mocha": "^3.0.2"
   }
 }

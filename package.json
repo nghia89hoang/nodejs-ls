@@ -1,6 +1,6 @@
 {
   "name": "nodejs-ls",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A recursive implementation of ls",
   "main": "ls.js",
   "scripts": {

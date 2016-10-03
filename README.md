@@ -1,6 +1,6 @@
-# recursiveReaddir
+# Parallel Asynchronous Recursive `ls`
 
-A parallelized recursive implementation of fs.readdir
+A parallelized recursive implementation of `ls` using `fs.readdir`
 
 ## How To Use:
 
@@ -10,7 +10,7 @@ A parallelized recursive implementation of fs.readdir
 1. Clone the repo:
 
     ```bash
-    git clone git@github.com:CrabDude/nodejs-recursivereaddir-starter.git
+    git clone git@github.com:CrabDude/nodejs-ls.git
     ```
 
 ### Development
@@ -32,5 +32,5 @@ A parallelized recursive implementation of fs.readdir
 1. Run:
 
     ```bash
-    ./ls.js
+    babel-node ./ls.js
     ```

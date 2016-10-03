@@ -1,24 +1,45 @@
 {
-  "name": "recursivereaddir",
-  "version": "1.0.0",
-  "description": "A recursive implementation of fs.readdir",
+  "name": "nodejs-ls",
+  "version": "1.0.1",
+  "description": "A recursive implementation of ls",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon  --exec npm start -- -- ",
+    "once": "babel-node -- index.js",
+    "test": "mocha --compilers js:babel-register test/spec",
+    "test-watch": "nodemon --exec \"npm test || true\"",
+    "dev": "run-p start test-watch lint-watch",
+    "clean": "rimraf dist",
+    "lint":  "eslint src",
+    "lint-watch":  "nodemon --exec \"npm run lint || true\"",
+    "build": "babel src -o dist"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/CrabDude/nodejs-recursivereaddir-starter.git"
+    "url": "git://github.com/CrabDude/nodejs-ls.git"
   },
   "author": "Adam Crabtree",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CrabDude/nodejs-recursivereaddir/issues"
+    "url": "https://github.com/CrabDude/nodejs-ls/issues"
   },
-  "homepage": "https://github.com/CrabDude/nodejs-recursivereaddir#readme",
+  "homepage": "https://github.com/CrabDude/nodejs-ls#readme",
   "dependencies": {
+    "npm-run-all": "^3.1.0",
+    "nodemon": "^1.10.2",
+    "babel-cli": "^6.16.0",
+    "babel-register": "^6.14.0",
+    "babel-preset-nodev6": "^1.0.0",
     "safeguards": "0.0.3",
-    "songbird": "^1.0.2",
+    "songbird": "^1.0.4",
     "trycatch": "^1.5.21"
+  },
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "babel-eslint": "^7.0.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.7.0",
+    "eslint-config-noderiety": "^1.1.1",
+    "mocha": "^3.0.2"
   }
 }
